@@ -2,11 +2,11 @@ const users = require('./showcase.json');
 const versions = require('./versions.json');
 
 module.exports = {
-  title: 'React Native',
+  title: 'Vulnsystem',
   tagline: 'A framework for building native apps using React',
-  organizationName: 'facebook',
-  projectName: 'react-native',
-  url: 'https://reactnative.dev',
+  organizationName: 'vulnsystem',
+  projectName: 'www.Vulnsystem.com',
+  url: 'https://www.Vulnsystem.com',
   baseUrl: '/',
   clientModules: [require.resolve('./snackPlayerInitializer.js')],
   scripts: [
