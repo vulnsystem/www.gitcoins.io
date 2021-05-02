@@ -5,8 +5,8 @@ module.exports = {
   title: 'Vulnsystem',
   tagline: 'A framework for building native apps using React',
   organizationName: 'vulnsystem',
-  projectName: 'www.Vulnsystem.com',
-  url: 'https://www.Vulnsystem.com',
+  projectName: 'www.vulnsystem.com',
+  url: 'https://www.vulnsystem.com',
   baseUrl: '/',
   clientModules: [require.resolve('./snackPlayerInitializer.js')],
   scripts: [
