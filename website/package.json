@@ -1,0 +1,47 @@
+{
+  "name": "react-native-website",
+  "description": "React Native website",
+  "version": "0.0.1",
+  "private": true,
+  "license": "CC-BY-4.0",
+  "homepage": "https://reactnative.dev/",
+  "repository": "github:facebook/react-native-website",
+  "bugs": {
+    "url": "https://github.com/facebook/react-native-website/issues"
+  },
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve",
+    "clean": "docusaurus clean",
+    "test": "yarn build",
+    "version:cut": "docusaurus docs:version",
+    "format:source": "prettier --write {{core,src}/**/*.js,*.js}",
+    "format:markdown": "prettier --write ../docs/*.md && prettier --write {{versioned_docs,src}/**/*.md,blog/*.md}",
+    "format:style": "prettier --write src/**/*.{scss,css}",
+    "prettier": "yarn format:source && yarn format:markdown && yarn format:style",
+    "lint": "eslint ../docs/** blog/** core/** src/**/*.{js,md}",
+    "lint:versioned": "eslint versioned_docs/**",
+    "language:lint": "cd ../ && alex .",
+    "language:lint:versioned": "cd ../ && alex",
+    "pwa:generate": "npx pwa-asset-generator ./static/img/header_logo.svg ./static/img/pwa --background #20232a --icon-only -opaque true --maskable true --type png"
+  },
+  "dependencies": {
+    "@docusaurus/core": "2.0.0-alpha.72",
+    "@docusaurus/plugin-pwa": "2.0.0-alpha.72",
+    "@docusaurus/preset-classic": "2.0.0-alpha.72",
+    "docusaurus-plugin-sass": "^0.1.12",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-github-btn": "^1.2.0"
+  },
+  "devDependencies": {
+    "alex": "^9.1.0",
+    "fs-extra": "^9.1.0",
+    "glob": "^7.1.6",
+    "glob-promise": "^4.1.0",
+    "path": "^0.12.7"
+  }
+}
