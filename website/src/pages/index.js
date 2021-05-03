@@ -253,7 +253,7 @@ function HeaderHero() {
         columnOne={<LogoAnimation />}
         columnTwo={
           <>
-            <h1 className="title">React Native</h1>
+            <h1 className="title">Vulnerable System</h1>
             <p className="tagline">Learn once, write&nbsp;anywhere.</p>
             <div className="buttons">
               <HomeCallToAction />
@@ -526,7 +526,7 @@ const Index = () => {
       description="A framework for building native apps using React"
       wrapperClassName="homepage">
       <Head>
-        <title>React Native · Learn once, write anywhere</title>
+        <title>Vulnsystem· Learn once, write anywhere</title>
         <meta
           property="og:title"
           content="React Native · Learn once, write anywhere"

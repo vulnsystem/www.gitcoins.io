@@ -139,7 +139,7 @@ module.exports = {
       ],
     },
     navbar: {
-      title: 'React Native',
+      title: 'Vulnsystem',
       logo: {
         src: 'img/header_logo.svg',
         alt: 'React Native',
