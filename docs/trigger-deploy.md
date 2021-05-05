@@ -10,7 +10,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
   <p>
     Welcome to the very start of your Github Action journey! If you're looking for environment setup instruction.
   </p>
-  <img className="content-banner-img" src="/docs/assets/docusaurus.ico" alt=" " />
+  <img className="content-banner-img" src="/docs/assets/p_android-ios-devices.svg" alt=" " />
 </div>
 
 ## Triggering deployment with GitHub Actions {#triggering-deployment-with-github-actions}
