@@ -1,5 +1,10 @@
 {
   "docs": {
+    "Docusaurus": [
+      "build-docusarurs-website",
+      "github-getting-started",
+      "trigger-deployment-actions"
+    ]
     "The Basics": [
       "getting-started",
       "intro-react-native-components",
@@ -63,11 +68,6 @@
       "communication-ios",
       "app-extensions",
       "publishing-to-app-store"
-    ],
-    "Docusarurs": [
-      "build-docusarurs-website",
-      "github-getting-started",
-      "trigger-deployment-actions"
     ]
   },
   "api": {
