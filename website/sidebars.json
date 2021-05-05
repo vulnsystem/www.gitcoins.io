@@ -4,7 +4,7 @@
       "build-docusarurs-website",
       "github-getting-started",
       "trigger-deployment-actions"
-    ]
+    ],
     "The Basics": [
       "getting-started",
       "intro-react-native-components",
