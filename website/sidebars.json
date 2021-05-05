@@ -1,8 +1,6 @@
 {
   "docs": {
     "The Basics": [
-      "docusaurus",
-      "github",
       "getting-started",
       "intro-react-native-components",
       "intro-react",
