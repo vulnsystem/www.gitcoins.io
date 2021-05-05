@@ -1,6 +1,6 @@
 ---
-id: docusaurus
-title: Docusaurus
+id: build-docusarurs-website
+title: Build Docusarurs Website
 description: This helpful guide to build your own github page with docusaurus.
 ---
 

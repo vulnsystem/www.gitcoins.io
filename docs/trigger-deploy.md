@@ -1,6 +1,6 @@
 ---
-id: github-getting-started
-title: Github getting started
+id: trigger-deployment-actions
+title: Triggering deployment with GitHub Actions
 description: This helpful guide to use github command.
 ---
 
