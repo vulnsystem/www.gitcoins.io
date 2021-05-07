@@ -2,11 +2,11 @@ const users = require('./showcase.json');
 const versions = require('./versions.json');
 
 module.exports = {
-  title: 'Vulnsystem',
+  title: 'Gitcoins',
   tagline: 'A framework for building native apps using React',
   organizationName: 'vulnsystem',
   projectName: 'www.vulnsystem.com',
-  url: 'https://www.vulnsystem.com',
+  url: 'https://www.gitcoins.io',
   baseUrl: '/',
   clientModules: [require.resolve('./snackPlayerInitializer.js')],
   scripts: [
@@ -139,7 +139,7 @@ module.exports = {
       ],
     },
     navbar: {
-      title: 'Vulnsystem',
+      title: 'Gitcoins',
       logo: {
         src: 'img/header_logo.svg',
         alt: 'React Native',
