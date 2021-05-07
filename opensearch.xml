@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
-  <ShortName>Vulnsystem</ShortName>
-  <Description>Search Vulnsystem</Description>
+  <ShortName>Gitcoins</ShortName>
+  <Description>Search Gitcoins</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://www.vulnsystem.com/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://www.vulnsystem.com/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://www.vulnsystem.com/opensearch.xml" />
-  <moz:SearchForm>https://www.vulnsystem.com/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://www.gitcoins.io/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://www.gitcoins.io/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://www.gitcoins.io/opensearch.xml" />
+  <moz:SearchForm>https://www.gitcoins.io/</moz:SearchForm>
 </OpenSearchDescription>
