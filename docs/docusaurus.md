@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
 
 <div className="content-banner">
   <p>
-    Welcome to the very start of your Docusaurus journey! If you're looking for environment setup instructions, they've moved to [Docusaurus](https://docusaurus.io) their own section. Continue reading for an introduction to the documentation, api, showcase, and more!
+    Welcome to the very start of your Docusaurus journey! If you're looking for environment setup instructions, they've moved to <a href="https://docusaurus.io">Docusaurus</a> their own section. Continue reading for an introduction to the documentation, api, showcase, and more!
   </p>
   <img className="content-banner-img" src="/docs/assets/docusaurus.svg" alt=" " />
 </div>
@@ -17,19 +17,21 @@ This helpful guide for building your own github page with docusaurus.Many differ
 
 ## Prerequisites
 
-To work with docusaurus, you will need to have an domain name like www.vulnsystem.com and github account.
+To work with docusaurus, you will need to have an domain name like www.gitcoins.io and github account.
+
+> please use [GoDaddy](https://sg.godaddy.com/) to apply an IO domain -)
 
 > While we do our best to assume no prior knowledge of JS, React, or H5, these are valuable topics of study for the aspiring website developer.
 
 ## Fork an website
 
-To build a website ASAP, First to fork an website which powered by docusaurus. The React Native website is selected and chosen. So fork from [facebook/react-native-website](https://github.com/facebook/react-native-website) and rename repository as www.vulnsystem.com.
+To build a website ASAP, First to fork an website which powered by docusaurus. The React Native website is selected and chosen. So fork from [facebook/react-native-website](https://github.com/facebook/react-native-website) and rename repository as [www.gitcoins.io](https://github.com/vulnsystem/www.gitcoins.io).
 
 ## Clone the repository
 
 ```
-git clone https://github.com/vulnsystem/www.vulnsystem.com.git
-cd www.vulnsystem.com
+git clone https://github.com/vulnsystem/www.gitcoins.io
+cd www.gitcoins.io
 yarn install
 cd website
 yarn run build
@@ -45,8 +47,8 @@ To adapte the key properties in the docusaurus.config.js in website dir.
 ```
 module.exports = {
   organizationName: 'vulnsystem',
-  projectName: 'www.vulnsystem.com',
-  url: 'https://www.vulnsystem.com',
+  projectName: 'www.gitcoins.io',
+  url: 'https://www.gitcoins.io',
   baseUrl: '/'
 }
 ```
@@ -63,7 +65,7 @@ module.exports = {
 To adapt the CNAME file in the website/static directory.
 
 ```
-www.vulnsystem.com
+www.gitcoins.io
 ```
 
 ## Check the adaption
@@ -84,7 +86,7 @@ The files in website/build will check into the gh-pages branche.
 
 ## Custom domain
 
-Navigate to your DNS provider and create a CNAME record that points your subdomain to the default domain for your site. For example, if you want to use the subdomain www.vulnsystem.com for your organization site, create a CNAME record that points www.vulnsystem.com tovulnsystem.github.io.
+Navigate to your DNS provider and create a CNAME record that points your subdomain to the default domain for your site. For example, if you want to use the subdomain www.gitcoins.io for your organization site, create a CNAME record that points www.gitcoins.io to vulnsystem.github.io.
 Create www CNAME record in the domain service management.
 record hostname: www
 record type: CNAME
