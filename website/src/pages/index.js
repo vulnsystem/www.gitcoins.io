@@ -128,7 +128,7 @@ function TwitterButton() {
       href="https://twitter.com/intent/follow?screen_name=reactnative&region=follow_link"
       className="twitter-follow-button">
       <div className="icon" />
-      Follow @reactnative
+      gitcoins@outlook.com
     </a>
   );
 }
@@ -137,7 +137,7 @@ function GitHubStarButton() {
   return (
     <div className="github-button">
       <GitHubButton
-        href="https://github.com/facebook/react-native"
+        href="https://github.com/vulnsystem/www.gitcoins.io"
         data-icon="octicon-star"
         data-size="large"
         aria-label="Star facebook/react-native on GitHub">
