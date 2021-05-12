@@ -186,7 +186,7 @@ module.exports = {
           ],
         },
         {
-          href: 'https://github.com/facebook/react-native',
+          href: 'https://github.com/vulnsystem/www.gitcoins.io',
           'aria-label': 'GitHub repository',
           position: 'right',
           className: 'navbar-github-link',
@@ -257,7 +257,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/react-native',
+              href: 'https://github.com/vulnsystem/www.gitcoins.io',
             },
           ],
         },
@@ -307,7 +307,7 @@ module.exports = {
         name: 'twitter:image',
         content: 'https://reactnative.dev/img/logo-og.png',
       },
-      {name: 'twitter:site', content: '@reactnative'},
+      {name: 'twitter:site', content: 'gitcoins@outlook.com'},
     ],
   },
 };
