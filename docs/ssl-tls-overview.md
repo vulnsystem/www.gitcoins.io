@@ -4,9 +4,7 @@ title: Overview of SSL/TLS
 description: 'Overview of SSL/TLS and its cryptographic system'
 ---
 > Copyright: the following content is totally copy from the [TECHSCHOOL](https://dev.to/techschoolguru/a-complete-overview-of-ssl-tls-and-its-cryptographic-system-36pd).
-
 [tls-overview](/docs/assets/Security/TLS overview.webp)
-
 I guess many of you know about HTTPS and some of you may have setup SSL/TLS for your web server. But how many of you understand deeply how SSL/TLS works? Do you know:
 - What really happens during a TLS handshake?
 - What cryptographic algorithms are used by TLS to protect the data?
@@ -23,14 +21,12 @@ I guess many of you know about HTTPS and some of you may have setup SSL/TLS for 
 There are a lot of questions, and I don't want to just scratch the surface. So this is gonna be a very thorough article to tell you everything about SSL/TLS, an extremely important building block of the security over the internet.
 
 ## What is SSL/TLS?
-
 [what-is-TLS](/docs/assets/Security/what is TLS.png)
-
 SSL stands for Secure Socket Layer. It is the predecessor of TLS.TLS the short form of Transport Layer Security, which is a cryptographic protocol that provides secure communication over a computer network.
 
 ## The history of SSL/TLS
 
-![tls-history](/docs/assets/Security/history TLS.png)
+[tls-history](/docs/assets/Security/history TLS.png)
 
 Here's a bit of the history of SSL and TLS:
 1. SSL was originally developed by Netscape, and it was first published in 1995 with version 2.0
@@ -47,9 +43,7 @@ SSL 3.0 was deprecated in 2015
 And recently, in March 2020, TLS 1.0 and TLS 1.1 was also gone. That means only TLS 1.2 and 1.3 are still active.
 
 ## Where is TLS being used?
-
 ![where-used](/docs/assets/Security/where used.png)
-
 First, it is widely used on the web. All websites that you visit with HTTPS are secured by TLS, or we often say HTTP over TLS.
 Similarly, email with SMTPS protocol is in fact SMTP and TLS.
 Then FTPS for secure file transfer protocol is also FTP plus TLS.
@@ -70,7 +64,6 @@ Because TLS gives us 3 things:
   - TLS recognizes any alteration of data during transmission by checking the message authentication code, which we will learn about in a moment.
 
 ## How does TLS work?
-
 ![how-it-works](/docs/assets/Security/how it works.png)
 Basically, TLS consists of 2 phases, or 2 protocols:
 
