@@ -102,9 +102,12 @@ Basically, TLS consists of 2 phases, or 2 protocols:
 ## Why TLS uses both symmetric and asymmetric cryptography?
 
 <figure>
-  <img src="/docs/assets/Security/both sym and asym.png" width="1000" alt="What is SSL/TLS." />
+  <img src="/docs/assets/Security/sym-asym.png" width="1000" alt="What is SSL/TLS." />
   <figcaption>both sym and asym</figcaption>
 </figure>
+
+
+![sym and asym](/docs/assets/Security/sym-asym.png)
 
 Why not just use one for all purposes?
 Well, it’s easy to see that symmetric cryptography can’t provide authentication. Since there’s only 1 secret key for both client and server, they know nothing about each other to verify. Not to mention that how they come up with the same key without leaking it to the public is hard.
