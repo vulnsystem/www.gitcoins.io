@@ -5,7 +5,7 @@ description: 'Overview of SSL/TLS and its cryptographic system'
 ---
 > Copyright: the following content is totally copy from the [TECHSCHOOL](https://dev.to/techschoolguru/a-complete-overview-of-ssl-tls-and-its-cryptographic-system-36pd).
 
-[tls-overview](/docs/assets/Security/tls-overview.webp)
+![tls-overview](/docs/assets/Security/tls-overview.webp)
 I guess many of you know about HTTPS and some of you may have setup SSL/TLS for your web server. But how many of you understand deeply how SSL/TLS works? Do you know:
 - What really happens during a TLS handshake?
 - What cryptographic algorithms are used by TLS to protect the data?
@@ -22,11 +22,11 @@ I guess many of you know about HTTPS and some of you may have setup SSL/TLS for 
 There are a lot of questions, and I don't want to just scratch the surface. So this is gonna be a very thorough article to tell you everything about SSL/TLS, an extremely important building block of the security over the internet.
 
 ## What is SSL/TLS?
-[what-is-TLS](/docs/assets/Security/what-is-tls.png)
+![what-is-TLS](/docs/assets/Security/what-is-tls.png)
 SSL stands for Secure Socket Layer. It is the predecessor of TLS.TLS the short form of Transport Layer Security, which is a cryptographic protocol that provides secure communication over a computer network.
 
 ## The history of SSL/TLS
-[tls-history](/docs/assets/Security/tls-history.png)
+![tls-history](/docs/assets/Security/tls-history.png)
 Here's a bit of the history of SSL and TLS:
 1. SSL was originally developed by Netscape, and it was first published in 1995 with version 2.0
 1. SSL version 1.0 was never publicly released because of some serious security flaws.
