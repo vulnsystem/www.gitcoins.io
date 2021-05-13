@@ -1,12 +1,12 @@
 ---
 id: ssl-tls-overview
-title: A complete overview of SSL/TLS
+title: Overview of SSL/TLS
 description: 'Overview of SSL/TLS and its cryptographic system'
 ---
 > Copyright: the following content is totally copy from the [TECHSCHOOL](https://dev.to/techschoolguru/a-complete-overview-of-ssl-tls-and-its-cryptographic-system-36pd).
 
 <figure>
-  <img src="/docs/assets/Security/TLS overview.webp" width="1000" alt="TLS overview" />
+  <img src="/docs/assets/Security/TLS overview.webp" alt="TLS overview" />
 </figure>
 
 I guess many of you know about HTTPS and some of you may have setup SSL/TLS for your web server. But how many of you understand deeply how SSL/TLS works? Do you know:
@@ -27,7 +27,7 @@ There are a lot of questions, and I don't want to just scratch the surface. So t
 ## What is SSL/TLS?
 
 <figure>
-  <img src="/docs/assets/Security/what is TLS.png" width="1000" alt="What is SSL/TLS." />
+  <img src="/docs/assets/Security/what is TLS.png" alt="What is SSL/TLS." />
 </figure>
 
 SSL stands for Secure Socket Layer. It is the predecessor of TLS.TLS the short form of Transport Layer Security, which is a cryptographic protocol that provides secure communication over a computer network.
@@ -35,7 +35,7 @@ SSL stands for Secure Socket Layer. It is the predecessor of TLS.TLS the short f
 ## The history of SSL/TLS
 
 <figure>
-  <img src="/docs/assets/Security/history TLS.png" width="1000" alt="What is SSL/TLS." />
+  <img src="/docs/assets/Security/history TLS.png" alt="What is SSL/TLS." />
 </figure>
 
 Here's a bit of the history of SSL and TLS:
@@ -55,7 +55,7 @@ And recently, in March 2020, TLS 1.0 and TLS 1.1 was also gone. That means only 
 ## Where is TLS being used?
 
 <figure>
-  <img src="/docs/assets/Security/where used.png" width="1000" alt="What is SSL/TLS." />
+  <img src="/docs/assets/Security/where used.png" alt="What is SSL/TLS." />
 </figure>
 First, it is widely used on the web. All websites that you visit with HTTPS are secured by TLS, or we often say HTTP over TLS.
 Similarly, email with SMTPS protocol is in fact SMTP and TLS.
@@ -65,7 +65,7 @@ And there are many other applications of TLS that I don’t have enough time to 
 ## Why do we need TLS?
 
 <figure>
-  <img src="/docs/assets/Security/why required.png" width="1000" alt="What is SSL/TLS." />
+  <img src="/docs/assets/Security/why required.png" alt="What is SSL/TLS." />
 </figure>
 Because TLS gives us 3 things:
 
@@ -80,7 +80,7 @@ Because TLS gives us 3 things:
 ## How does TLS work?
 
 <figure>
-  <img src="/docs/assets/Security/how it works.png" width="1000" alt="What is SSL/TLS." />
+  <img src="/docs/assets/Security/how it works.png" alt="What is SSL/TLS." />
   <figcaption>Handshake and Record protocol</figcaption>
 </figure>
 
@@ -101,7 +101,10 @@ Basically, TLS consists of 2 phases, or 2 protocols:
 
 ## Why TLS uses both symmetric and asymmetric cryptography?
 
-Why both sym and asym
+<figure>
+  <img src="/docs/assets/Security/sym and asym.png" width="1000" alt="What is SSL/TLS." />
+  <figcaption>both sym and asym</figcaption>
+</figure>
 
 Why not just use one for all purposes?
 Well, it’s easy to see that symmetric cryptography can’t provide authentication. Since there’s only 1 secret key for both client and server, they know nothing about each other to verify. Not to mention that how they come up with the same key without leaking it to the public is hard.
