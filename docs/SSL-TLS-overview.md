@@ -3,27 +3,24 @@ id: ssl-tls-overview
 title: A complete overview of SSL/TLS
 description: 'Overview of SSL/TLS and its cryptographic system'
 ---
-> Copyright: the following content is totally copy from the [TECHSCHOOL]{https://dev.to/techschoolguru/a-complete-overview-of-ssl-tls-and-its-cryptographic-system-36pd}.
+> Copyright: the following content is totally copy from the [TECHSCHOOL](https://dev.to/techschoolguru/a-complete-overview-of-ssl-tls-and-its-cryptographic-system-36pd).
 
 <figure>
   <img src="/docs/assets/Security/TLS overview.webp" width="1000" alt="TLS overview" />
 </figure>
 
-I guess many of you know about HTTPS and some of you may have setup SSL/TLS for your web server. But how many of you understand deeply how SSL/TLS works?
-
-Do you know:
-
-    What really happens during a TLS handshake?
-    What cryptographic algorithms are used by TLS to protect the data?
-    How do client and server exchange secret keys?
-    How Diffie-Hellman Ephemeral key exchange works?
-    Why do we need a digital certificate?
-    Why does it need to be signed by a certificate authority?
-    What is a digital signature? How is it signed and verified?
-    What perfect forward secrecy means?
-    How AEAD, MAC, HKDF, 0-RTT works?
-    What is Elliptic-Curve cryptography?
-    What's new in TLS 1.3 compared to TLS 1.2?
+I guess many of you know about HTTPS and some of you may have setup SSL/TLS for your web server. But how many of you understand deeply how SSL/TLS works? Do you know:
+- What really happens during a TLS handshake?
+- What cryptographic algorithms are used by TLS to protect the data?
+- How do client and server exchange secret keys?
+- How Diffie-Hellman Ephemeral key exchange works?
+- Why do we need a digital certificate?
+- Why does it need to be signed by a certificate authority?
+- What is a digital signature? How is it signed and verified?
+- What perfect forward secrecy means?
+- How AEAD, MAC, HKDF, 0-RTT works?
+- What is Elliptic-Curve cryptography?
+- What's new in TLS 1.3 compared to TLS 1.2?
 
 There are a lot of questions, and I don't want to just scratch the surface. So this is gonna be a very thorough article to tell you everything about SSL/TLS, an extremely important building block of the security over the internet.
 
@@ -31,32 +28,29 @@ There are a lot of questions, and I don't want to just scratch the surface. So t
 
 <figure>
   <img src="/docs/assets/Security/what is TLS.png" width="1000" alt="What is SSL/TLS." />
-  <figcaption>Just a sampling of the many views used in Android and iOS apps.</figcaption>
 </figure>
 
-SSL stands for Secure Socket Layer. It is the predecessor of TLS.
-
-TLS the short form of Transport Layer Security, which is a cryptographic protocol that provides secure communication over a computer network.
+SSL stands for Secure Socket Layer. It is the predecessor of TLS.TLS the short form of Transport Layer Security, which is a cryptographic protocol that provides secure communication over a computer network.
 
 ## The history of SSL/TLS
 
-SSL/TLS history
+<figure>
+  <img src="/docs/assets/Security/history TLS.png" width="1000" alt="What is SSL/TLS." />
+</figure>
 
 Here's a bit of the history of SSL and TLS:
-
-    SSL was originally developed by Netscape, and it was first published in 1995 with version 2.0
-    SSL version 1.0 was never publicly released because of some serious security flaws.
-    In 1996, the SSL version 3.0 was published as a complete redesign of the protocol.
-    Then 3 years later, TLS 1.0 was first defined in RFC 2246 by IETF as an upgrade of SSL Version 3.0
-    It took 7 years to upgrade it to TLS 1.1 in 2006
-    TLS 1.2 came right after that in 2008.
-    Then finally after 10 years in the making, we got TLS 1.3 with a huge improvements in 2018.
+1. SSL was originally developed by Netscape, and it was first published in 1995 with version 2.0
+1. SSL version 1.0 was never publicly released because of some serious security flaws.
+1. In 1996, the SSL version 3.0 was published as a complete redesign of the protocol.
+1. Then 3 years later, TLS 1.0 was first defined in RFC 2246 by IETF as an upgrade of SSL Version 3.0
+1. It took 7 years to upgrade it to TLS 1.1 in 2006
+1. TLS 1.2 came right after that in 2008.
+1. Then finally after 10 years in the making, we got TLS 1.3 with a huge improvements in 2018.
 
 So at the moment which SSL/TLS version still exist?
-
-    The SSL 2.0 was deprecated in 2011
-    SSL 3.0 was deprecated in 2015
-    And recently, in March 2020, TLS 1.0 and TLS 1.1 was also gone. That means only TLS 1.2 and 1.3 are still active.
+The SSL 2.0 was deprecated in 2011
+SSL 3.0 was deprecated in 2015
+And recently, in March 2020, TLS 1.0 and TLS 1.1 was also gone. That means only TLS 1.2 and 1.3 are still active.
 
 ## Where is TLS being used?
 
