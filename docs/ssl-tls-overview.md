@@ -102,7 +102,7 @@ Basically, TLS consists of 2 phases, or 2 protocols:
 ## Why TLS uses both symmetric and asymmetric cryptography?
 
 <figure>
-  <img src="/docs/assets/Security/sym and asym.png" width="1000" alt="What is SSL/TLS." />
+  <img src="/docs/assets/Security/both sym and asym.png" width="1000" alt="What is SSL/TLS." />
   <figcaption>both sym and asym</figcaption>
 </figure>
 
