@@ -6,7 +6,7 @@ description: 'Overview of SSL/TLS and its cryptographic system'
 > Copyright: the following content is totally copy from the [TECHSCHOOL](https://dev.to/techschoolguru/a-complete-overview-of-ssl-tls-and-its-cryptographic-system-36pd).
 
 <figure>
-  <img src="/docs/assets/Security/TLS overview.webp" alt="TLS overview" />
+  <img src="/docs/assets/Security/TLS overview.webp" width="100%" alt="TLS overview" />
 </figure>
 
 I guess many of you know about HTTPS and some of you may have setup SSL/TLS for your web server. But how many of you understand deeply how SSL/TLS works? Do you know:

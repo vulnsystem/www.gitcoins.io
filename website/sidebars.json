@@ -6,7 +6,8 @@
       "trigger-deployment-actions"
     ],
     "Security": [
-      "ssl-tls-overview"
+      "ssl-tls-overview",
+      "symmetric-cryptography"
     ],
     "The Basics": [
       "getting-started",
