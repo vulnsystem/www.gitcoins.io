@@ -3,10 +3,10 @@ id: ssl-tls-overview
 title: A complete overview of SSL/TLS
 description: 'Overview of SSL/TLS and its cryptographic system'
 ---
+> Copyright: the following content is totally copy from the [TECHSCHOOL]{https://dev.to/techschoolguru/a-complete-overview-of-ssl-tls-and-its-cryptographic-system-36pd}.
 
 <figure>
-  <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--o1khBbvQ--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/f4ld6sik4664r5oqxmxb.png" width="1000" alt="Diagram of Android and iOS app showing them both built on top of atomic elements called views." />
-  <figcaption>Just a sampling of the many views used in Android and iOS apps.</figcaption>
+  <img src="/docs/assets/Security/TLS overview.webp" width="1000" alt="TLS overview" />
 </figure>
 
 I guess many of you know about HTTPS and some of you may have setup SSL/TLS for your web server. But how many of you understand deeply how SSL/TLS works?
@@ -26,6 +26,94 @@ Do you know:
     What's new in TLS 1.3 compared to TLS 1.2?
 
 There are a lot of questions, and I don't want to just scratch the surface. So this is gonna be a very thorough article to tell you everything about SSL/TLS, an extremely important building block of the security over the internet.
+
+## What is SSL/TLS?
+
+<figure>
+  <img src="/docs/assets/Security/what is TLS.png" width="1000" alt="What is SSL/TLS." />
+  <figcaption>Just a sampling of the many views used in Android and iOS apps.</figcaption>
+</figure>
+
+SSL stands for Secure Socket Layer. It is the predecessor of TLS.
+
+TLS the short form of Transport Layer Security, which is a cryptographic protocol that provides secure communication over a computer network.
+
+## The history of SSL/TLS
+
+SSL/TLS history
+
+Here's a bit of the history of SSL and TLS:
+
+    SSL was originally developed by Netscape, and it was first published in 1995 with version 2.0
+    SSL version 1.0 was never publicly released because of some serious security flaws.
+    In 1996, the SSL version 3.0 was published as a complete redesign of the protocol.
+    Then 3 years later, TLS 1.0 was first defined in RFC 2246 by IETF as an upgrade of SSL Version 3.0
+    It took 7 years to upgrade it to TLS 1.1 in 2006
+    TLS 1.2 came right after that in 2008.
+    Then finally after 10 years in the making, we got TLS 1.3 with a huge improvements in 2018.
+
+So at the moment which SSL/TLS version still exist?
+
+    The SSL 2.0 was deprecated in 2011
+    SSL 3.0 was deprecated in 2015
+    And recently, in March 2020, TLS 1.0 and TLS 1.1 was also gone. That means only TLS 1.2 and 1.3 are still active.
+
+## Where is TLS being used?
+
+Where TLS is used
+
+First, it is widely used on the web. All websites that you visit with HTTPS are secured by TLS, or we often say HTTP over TLS.
+
+Similarly, email with SMTPS protocol is in fact SMTP and TLS.
+
+Then FTPS for secure file transfer protocol is also FTP plus TLS.
+
+And there are many other applications of TLS that I don’t have enough time to mention.
+
+## Why do we need TLS?
+
+Why TLS
+
+Because TLS gives us 3 things:
+
+    Authentication
+        TLS verifies the identity of the communicating parties, which normally be clients and servers.
+        With the help of asymmetric cryptography, TLS makes sure that we will go to the authentic website, and not a fake one.
+
+    Confidentiality
+        TLS protects the exchanged data from unauthorized access by encrypting it with symmetric encryption algorithms.
+
+    Integrity
+        TLS recognizes any alteration of data during transmission by checking the message authentication code, which we will learn about in a moment.
+
+## How does TLS work?
+
+How TLS works
+
+Basically, TLS consists of 2 phases, or 2 protocols:
+
+    Handshake protocol
+
+    In this phase, the client and server will:
+        Negotiate the protocol version
+        Select cryptographic algorithm (or cipher suites)
+        Authenticate each other by asymmetric cryptography
+        Establish a shared secret key that will be used for symmetric encryption in the next phase.
+
+    So the main purpose of the handshake is for authentication and key exchange.
+
+    Record protocol
+
+    In this phase:
+        All outgoing messages will be encrypted with the shared secret key established in the handshake.
+        Then the encrypted messages are transmited to the other side.
+        They will be verified to see if there’s any modification during transmission or not.
+        If not, the messages will be decrypted with the same symmetric secret key.
+
+    So we will achieve both confidentiality and integrity in this record protocol.
+
+    And because the amount of encrypted data in this phase is large, this is often called bulk encryption.
+
 
 ## Views and mobile development
 

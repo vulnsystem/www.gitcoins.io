@@ -10,7 +10,7 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import con
   <p>
     Welcome to the very start of your Docusaurus journey! If you're looking for environment setup instructions, they've moved to <a href="https://docusaurus.io">Docusaurus</a> their own section. Continue reading for an introduction to the documentation, api, showcase, and more!
   </p>
-  <img className="content-banner-img" src="/docs/assets/docusaurus.svg" alt=" " />
+  <img className="content-banner-img" src="/docs/assets/Docusaurus/docusaurus.svg" alt=" " />
 </div>
 
 This helpful guide for building your own github page with docusaurus.Many different kinds of people use Docusaurus: from advanced developers to React beginners, to people getting started programming for the first time in their career. These docs were written for all learners, no matter their experience level or background.
