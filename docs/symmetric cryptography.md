@@ -1,12 +1,12 @@
 ---
 id: symmetric-cryptography 
-title: symmetric cryptography 
+title: Symmetric Cryptography 
 description: 'Overview of symmetric cryptography'
 ---
 > Copyright: the following content is totally copy from the [TECHSCHOOL](https://dev.to/techschoolguru/a-complete-overview-of-ssl-tls-and-its-cryptographic-system-36pd).
 
 <figure>
-  <img src="/docs/assets/Security/Symmetric cryptography.png" alt="TLS overview" />
+  <img src="/docs/assets/Security/symmetric-cryptography.png" alt="TLS overview" />
 </figure>
 
 Alright, now let’s learn more about symmetric cryptography. I guess you’ve already known the basics.
@@ -20,7 +20,7 @@ But he can still change it!
 ## Bit-flipping attack
 
 <figure>
-  <img src="/docs/assets/Security/Bit flipping.png" alt="TLS overview" />
+  <img src="/docs/assets/Security/bit-flipping.png" alt="TLS overview" />
 </figure>
 
 There’s one technique called bit-flipping attack that works like this:
@@ -29,12 +29,15 @@ Now Harry catches the encrypted message. Although he can’t decrypt it, he can 
 Now when the bank decrypts it, they will get a different plaintext content. In this case, it has become 900 dollars instead of 100.
 So it’s very dangerous. That’s why we need to make sure that the encrypted message hasn’t been altered during transmission.
 
-But how?
+**But how?**
 
 ## Authenticated Encryption (AE)
 
 One way to do that is to use Authenticated Encryption. The idea is to not just encrypt, but also authenticate the encrypted message.
 Authenticated Encryption
+<figure>
+  <img src="/docs/assets/Security/ae.png" alt="TLS overview" />
+</figure>
 
 ### The first step is to encrypt.
 
@@ -60,7 +63,7 @@ So the associated data is also an input of the MAC algorithm. And because of thi
 
 Now let's see how Bob can check that the encrypted message hasn’t been changed during transmission.
 <figure>
-  <img src="/docs/assets/Security/Decrypt.png" alt="TLS overview" />
+  <img src="/docs/assets/Security/decrypt.png" alt="TLS overview" />
 </figure>
 
 It’s simply a reverse process. Starting with the encrypted message with MAC, we untag the MAC from the encrypted message.
@@ -68,7 +71,7 @@ Then the encrypted message will go to the MAC algorithm together with the shared
 The associated data will also go into the MAC algorithm. And the output of it will be another MAC.
 
 <figure>
-  <img src="/docs/assets/Security/Verify.png" alt="TLS overview" />
+  <img src="/docs/assets/Security/verify.png" alt="TLS overview" />
 </figure>
 
 Now Bob can simply compare the 2 MAC values. If they’re different then he knows that the encrypted message has been changed. Else, he can safely decrypt the message and use it with the confident that it’s the same plaintext message that Alice sent.
@@ -76,7 +79,7 @@ Now Bob can simply compare the 2 MAC values. If they’re different then he know
 ## Secret key exchange
 However, there’s 1 question: How Bob and Alice share the secret key with each other without leaking it to the public?
 <figure>
-  <img src="/docs/assets/Security/Key exchange.png" alt="TLS overview" />
+  <img src="/docs/assets/Security/key-exchange.png" alt="TLS overview" />
 </figure>
 Well, the answer is: they need to use asymmetric or public-key cryptography for that purpose. Specifically, they can use either Diffie-Hellman Ephemeral, or Elliptic-Curve Diffie-Hellman Ephemeral.
 ### Diffie-Hellman key exchange
@@ -117,18 +120,13 @@ Why? Let's do the math:
 ```
 So Alice and Bob come up with the same secret number S without leaking it to the public.
 
-<figure>
-  <img src="/docs/assets/Security/Derive secret key.png" alt="What is SSL/TLS." />
-  <figcaption>Derive secret key</figcaption>
-</figure>
-
 ### Key Derivation Function - KDF
 
 Each encryption algorithm may require a secret key of different length. So to make the secret key, Alice and Bob must put S to the same key derivation function (KDF), and the output will be a shared secret key of required length.
 In TLS 1.3, we use a HMAC-based key derivation function, so that’s why the name ** HKDF **.
 
 <figure>
-  <img src="/docs/assets/Security/HKDF.png" alt="What is SSL/TLS." />
+  <img src="/docs/assets/Security/HKDF2.png" alt="What is SSL/TLS." />
 </figure>
 
 Generally, the KDF takes following inputs:
@@ -139,6 +137,11 @@ Generally, the KDF takes following inputs:
 - Optionally some context or application-specific information
 - An optional salt.
 With all of these inputs, KDF will produce a secret key of required length.
+
+<figure>
+  <img src="/docs/assets/Security/HKDF1.png" alt="What is SSL/TLS." />
+  <figcaption>Derive secret key</figcaption>
+</figure>
 
 ### Trapdoor function
 
@@ -190,3 +193,4 @@ This is called perfect forward secrecy in TLS.
 So now you understand what Diffie-Hellman Ephemeral means. It’s just Diffie-Hellman with ephemeral or short-lived keys.
 
 ** How about Elliptic-Curve Diffie-Hellman Ephemeral? **
+elliptic-curve.png
