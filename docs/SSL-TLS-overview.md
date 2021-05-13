@@ -68,6 +68,7 @@ And there are many other applications of TLS that I don’t have enough time to 
   <img src="/docs/assets/Security/why required.png" width="1000" alt="What is SSL/TLS." />
 </figure>
 Because TLS gives us 3 things:
+
 - Authentication
   - TLS verifies the identity of the communicating parties, which normally be clients and servers. 
   - With the help of asymmetric cryptography, TLS makes sure that we will go to the authentic website, and not a fake one.
@@ -90,10 +91,18 @@ Basically, TLS consists of 2 phases, or 2 protocols:
   - Select cryptographic algorithm (or cipher suites)
   - Authenticate each other by asymmetric cryptography
   - Establish a shared secret key that will be used for symmetric encryption in the next phase.
-    So the main purpose of the handshake is for authentication and key exchange.
+  So the main purpose of the handshake is for authentication and key exchange.
 - Record protocol. In this phase:
   - All outgoing messages will be encrypted with the shared secret key established in the handshake.
   - Then the encrypted messages are transmited to the other side.
   - They will be verified to see if there’s any modification during transmission or not.
   - If not, the messages will be decrypted with the same symmetric secret key.
-    So we will achieve both confidentiality and integrity in this record protocol. And because the amount of encrypted data in this phase is large, this is often called bulk encryption.
+  So we will achieve both confidentiality and integrity in this record protocol. And because the amount of encrypted data in this phase is large, this is often called bulk encryption.
+
+## Why TLS uses both symmetric and asymmetric cryptography?
+
+Why both sym and asym
+
+Why not just use one for all purposes?
+Well, it’s easy to see that symmetric cryptography can’t provide authentication. Since there’s only 1 secret key for both client and server, they know nothing about each other to verify. Not to mention that how they come up with the same key without leaking it to the public is hard.
+How about asymmetric cryptography? Sounds like a good candidate. Unfortunately, it’s much slower than symmetric cryptography. And by “much”, I mean from 100 times to even 10000 times slower. So it’s clearly not suitable for bulk encryption.

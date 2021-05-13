@@ -36,7 +36,7 @@ module.exports = {
           showLastUpdateAuthor: false,
           showLastUpdateTime: true,
           editUrl:
-            'https://github.com/vulnsystem/www.gitcoins.io/tree/documentation/',
+            'https://github.com/vulnsystem/www.gitcoins.io/blob/documentation/website/',
           path: '../docs',
           sidebarPath: require.resolve('./sidebars.json'),
           remarkPlugins: [require('@react-native-website/remark-snackplayer')],
