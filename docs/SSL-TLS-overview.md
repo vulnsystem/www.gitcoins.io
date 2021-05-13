@@ -68,12 +68,12 @@ And there are many other applications of TLS that I don’t have enough time to 
   <img src="/docs/assets/Security/why required.png" width="1000" alt="What is SSL/TLS." />
 </figure>
 Because TLS gives us 3 things:
-- _Authentication: 
+- Authentication
   - TLS verifies the identity of the communicating parties, which normally be clients and servers. 
   - With the help of asymmetric cryptography, TLS makes sure that we will go to the authentic website, and not a fake one.
-- _Confidentiality: 
+- Confidentiality
   - TLS protects the exchanged data from unauthorized access by encrypting it with symmetric encryption algorithms.
-- _Integrity: 
+- Integrity
   - TLS recognizes any alteration of data during transmission by checking the message authentication code, which we will learn about in a moment.
 
 ## How does TLS work?
@@ -85,13 +85,13 @@ Because TLS gives us 3 things:
 
 Basically, TLS consists of 2 phases, or 2 protocols:
 
-- _Handshake protocol. In this phase, the client and server will:
+- Handshake protocol. In this phase, the client and server will:
   - Negotiate the protocol version
   - Select cryptographic algorithm (or cipher suites)
   - Authenticate each other by asymmetric cryptography
   - Establish a shared secret key that will be used for symmetric encryption in the next phase.
     So the main purpose of the handshake is for authentication and key exchange.
-- _Record protocol. In this phase:
+- Record protocol. In this phase:
   - All outgoing messages will be encrypted with the shared secret key established in the handshake.
   - Then the encrypted messages are transmited to the other side.
   - They will be verified to see if there’s any modification during transmission or not.
