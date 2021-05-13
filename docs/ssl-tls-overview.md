@@ -5,7 +5,7 @@ description: 'Overview of SSL/TLS and its cryptographic system'
 ---
 > Copyright: the following content is totally copy from the [TECHSCHOOL](https://dev.to/techschoolguru/a-complete-overview-of-ssl-tls-and-its-cryptographic-system-36pd).
 
-![tls-overview](/docs/assets/Security/TLS overview.webp)
+[tls-overview](/docs/assets/Security/TLS overview.webp)
 
 I guess many of you know about HTTPS and some of you may have setup SSL/TLS for your web server. But how many of you understand deeply how SSL/TLS works? Do you know:
 - What really happens during a TLS handshake?
@@ -24,7 +24,7 @@ There are a lot of questions, and I don't want to just scratch the surface. So t
 
 ## What is SSL/TLS?
 
-![what-is-TLS](/docs/assets/Security/what is TLS.png)
+[what-is-TLS](/docs/assets/Security/what is TLS.png)
 
 SSL stands for Secure Socket Layer. It is the predecessor of TLS.TLS the short form of Transport Layer Security, which is a cryptographic protocol that provides secure communication over a computer network.
 
