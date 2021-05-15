@@ -9,7 +9,8 @@
       "ssl-tls-overview",
       "symmetric-cryptography",
       "asymmetric-cryptography",
-      "tls-handshake"
+      "tls-handshake",
+      "tls-new-version"
     ],
     "The Basics": [
       "getting-started",
