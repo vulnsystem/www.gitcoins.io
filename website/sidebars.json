@@ -7,7 +7,8 @@
     ],
     "Security": [
       "ssl-tls-overview",
-      "symmetric-cryptography"
+      "symmetric-cryptography",
+      "asymmetric-cryptography"
     ],
     "The Basics": [
       "getting-started",
