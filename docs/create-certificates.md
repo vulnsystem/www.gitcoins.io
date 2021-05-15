@@ -5,9 +5,11 @@ description: 'How to create certificates'
 ---
 > Copyright: the following content is totally copy from the [TECHSCHOOL](https://dev.to/techschoolguru/how-to-create-sign-ssl-tls-certificates-2aai).
 
-Now let's create and verify the certificates with openssl.
+
 ![openssl](/docs/assets/Security/openssl.png)
 
+
+Now let's create and verify the certificates with openssl.
 For the purpose of this tutorial, we won’t submit our Certificate Signing Request (CSR) to a real CA. Instead, we will play both roles: the certificate authority and the certificate applicant.
 
 So here's what we're gonna do:
@@ -28,9 +30,7 @@ openssl req -x509 -newkey rsa:4096 -days 365 -keyout ca-key.pem -out ca-cert.pem
 - And finally the -out option to tell it to write the certificate to ca-cert.pem file.
 
 Once the key is generated, we will be asked to provide a pass phrase, which will be used to encrypt the private key before writing it to the PEM file.
-
 Why is it encrypted? Because if somehow the private key file is hacked, the hacker cannot use it to do anything without knowing the pass phrase to decrypt it first.
-
 Next, openssl will ask us for some identity information to generate the certificate:
 - The country code
 - The state or province name
