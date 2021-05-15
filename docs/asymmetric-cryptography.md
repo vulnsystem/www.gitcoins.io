@@ -7,7 +7,7 @@ description: 'Overview of asymmetric cryptography'
 
 Now let’s get back to asymmetric cryptography! It’s an awesome technology that has a wide range of applications.
 
-![tls-overview](/docs/assets/Security/asymmetric-overview.png)
+![asymmetric-overview](/docs/assets/Security/asymmetric-overview.png)
 We’ve already explored 1 of its application, which is for symmetric secret key exchange, with Diffie-Hellman Ephemeral and Elliptic-Curve Diffie-Hellman Ephemeral.
 In fact, RSA algorithm was also used for key exchange in the past, but it has been removed in TLS 1.3 due to various attacks and no forward-secrecy capability.
 Asymmetric cryptography is also used in encryption system. Here are asymmetric encryption algorithms:
