@@ -92,3 +92,14 @@ Well, we just do a reversed process:
 1. The result is another hash value.
 1. Then we just compare the 2 hash values.
 1. If they’re the same then the signature is valid.
+
+## Elliptic-Curve Cryptography 
+![elliptic-curve](/docs/assets/Security/elliptic-curve.png)
+Elliptic-curve cryptography (or ECC) is an approach to asymmetric cryptography, where the algorithm is similar, but a different trapdoor function is used.
+That trapdoor function is based on the algebraic structure of elliptic curves. And that’s why the name.
+One amazing value of elliptic curve cryptography is: it requires smaller keys to provide the equivalent security level. You can see it in this comparison with RSA.
+The U.S. National Security Agency (NSA) used to protect their top secret with ECC 384-bits key, which provides the same security level with a RSA-7680 bit key.
+**Sounds amazing, right?**
+However, Elliptic curve cryptography is an easier target for quantum-computing attack. Shor’s algorithm can break ECC on a hypothetical quantum computer with less amount of quantum resources than to break RSA.
+There might be decades before that strong quantum computer actually be built and used. But have we prepared anything for that yet? Is there any quantum-resistant algorithm?
+Yes, there is Supersingular Isogeny Diffie-Hellman key exchange algorithm, which is also based on the Elliptic Curve Cryptography.
