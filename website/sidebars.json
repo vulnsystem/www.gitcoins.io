@@ -10,7 +10,6 @@
       "symmetric-cryptography",
       "asymmetric-cryptography",
       "tls-handshake",
-      "tls-new-version",
       "create-certificates"
     ],
     "The Basics": [
