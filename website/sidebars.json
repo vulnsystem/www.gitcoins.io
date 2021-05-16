@@ -10,7 +10,8 @@
       "symmetric-cryptography",
       "asymmetric-cryptography",
       "tls-handshake",
-      "create-certificates"
+      "create-certificates",
+      "openssl-labs"
     ],
     "The Basics": [
       "getting-started",
