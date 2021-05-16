@@ -11,7 +11,8 @@
       "asymmetric-cryptography",
       "tls-handshake",
       "create-certificates",
-      "openssl-labs"
+      "openssl-labs",
+      "browser-authority"
     ],
     "The Basics": [
       "getting-started",
