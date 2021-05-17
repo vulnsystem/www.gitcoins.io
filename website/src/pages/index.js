@@ -379,7 +379,7 @@ function Talks() {
         columnTwo={
           <div className="vidWrapper">
             <iframe
-              src="https://www.youtube.com/embed/NCAY0HIfrwc"
+              src="https://www.ixigua.com/6791285605645943307"
               title="Mobile Innovation with React Native, ComponentKit, and Litho"
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
