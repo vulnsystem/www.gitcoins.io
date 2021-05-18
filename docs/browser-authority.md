@@ -9,122 +9,67 @@ description: 'How browser authority works'
 
 This lab to show you how authority of web browser works.
 
-## Generate and verify secp256k1 certificate
+## Generate server certificate
 
-### Root (EC) cert
-First to generate EC private key and self-signed certificate
-
-```
-openssl ecparam -genkey -out ca.key -name secp256k1 
-openssl req -x509 -new -key ca.key -out ca.cert -subj "/C=FR/ST=Occitanie/L=Toulouse/O=Tech School/OU=Education/CN=*.techschool.guru/emailAddress=root.guru@gmail.com"
-```
-
-> Notive: To assign **secp256k1** as name of openssl ecparam genkey.
-
-### Server's cert request 
-Second to generate web server's private key and certificate signing request (EC)
+We will create the CA and server certificate which key type is rsa:4096. The detailed [source code](https://github.com/vulnsystem/OpensslCertificateVerify/browser-authority) have been push to github. Please star it when helpful. The CA and server certificates will generate after you run the **gen.sh**.
 
 ```
-openssl ecparam -genkey -out server.key -name secp256k1 
-openssl req  -key server.key -new -out server.req -subj "/C=FR/ST=Ile de France/L=Paris/O=PC Book/OU=Computer/CN=*.pcbook.com/emailAddress=server@gmail.com"
-```
+# 1. Generate server CA's private key and self-signed certificate
+openssl req -x509 -newkey rsa:4096 -days 365 -nodes -keyout ca.key -out ca.cert -subj "/CN=localhost/emailAddress=ca@gmail.com"
 
-### Server's cert
-Third to use CA's private key to sign web server's CSR and get back the signed certificate of server
-```
+echo "CA's self-signed certificate"
+openssl x509 -in ca.cert -noout -text
+
+# 2. Generate web server's private key and certificate signing request (CSR)
+openssl req -newkey rsa:4096 -nodes -keyout server.key -out server.req -subj "/CN=localhost/emailAddress=server@gmail.com"
+
+# 3. Use CA's private key to sign web server's CSR and get back the signed certificate
 openssl x509 -req -in server.req -days 60 -CA ca.cert -CAkey ca.key -CAcreateserial -out server.cert -extfile server.ext
-```
 
-### Client's cert request
-Fourth to generate client's private key and certificate signing request (EC)
-```
-openssl ecparam -genkey -out client.key -name secp256k1 
-openssl req -key client.key -new  -out client.req -subj "/C=FR/ST=Alsace/L=Strasbourg/O=PC Client/OU=Computer/CN=*.client.com/emailAddress=client@gmail.com"
-```
+echo "Server's signed certificate"
+openssl x509 -in server.cert -noout -text
 
-### Client's cert
-Fifth to use CA's private key to sign client's CSR and get back the signed certificate of client
-```
-openssl x509 -req -in client.req -days 60 -CA ca.cert -CAkey ca.key -CAcreateserial -out client.cert -extfile client.ext
-```
-
-### Verify the server certificate aginst by root CA
-```
+# 4. To verify the server certificate aginst by root CA
+echo "server's certificate verification"
 openssl verify -show_chain -CAfile ca.cert server.cert
-```
-
-### verify the client certificate aginst by root CA.
-```
-openssl verify -show_chain -CAfile ca.cert client.cert
-```
-
-### Source Code
-[The detaile code have been put into the github](https://github.com/vulnsystem/OpensslCertificateVerify/blob/main/secp256k1/). 
-[gen.sh](https://github.com/vulnsystem/OpensslCertificateVerify/blob/main/secp256k1/gen.sh) collect all the shell command, you can issue ./gen.sh to run all at a time.
-
-## Generate and verify secp256r1 certificate
-
-> The same as **secp256r1**, if you want to reuse these code with secp256r1, please go through [the detailed infomation in github](https://github.com/vulnsystem/OpensslCertificateVerify/blob/main/secp256r1/).
-
-## A chain of trust
-
-In these lab, we create root, intermediate and leaf certificate. The intermediate's certificate signed by root's and leaf's certificate signed by intermediate's. 
-
-### Root (RSA) cert
-First to generate root authority's private key and self-signed certificate.
-```
-openssl req -x509 -newkey rsa:4096 -days 365 -nodes -keyout root.key -out root.cert -subj "/CN=localhost/emailAddress=root@gmail.com" 
-```
-### Intermediate cert request
-Second to generate intermediate authorities's private key and certificate signing request (CSR)
-```
-openssl req -newkey rsa:4096 -nodes -keyout intermediate.key -out intermediate.req -subj "/CN=localhost/emailAddress=intermediate@gmail.com"
-```
-
-### Intermediate cert
-Third to use root's private key to sign intermediate's CSR and get back the signed certificate of intermediate.
 
 ```
-openssl x509 -req -in intermediate.req -days 60 -CA root.cert -CAkey root.key -CAcreateserial -out intermediate.cert -extfile intermediate.ext
-```
+## Create a webpage
+In the github repository, there is a index.html file in the same directory as gen.sh. The webpage will be loaded when browser send a request from server.
 
-Notice basicConstraints atrribute in intermediate.ext should be assigned as following.
-``` name=intermediate.ext
-subjectAltName=DNS:*.pcbook.com,DNS:*.pcbook.org,IP:0.0.0.0
-basicConstraints=CA:TRUE,pathlen:0
-```
+## Start openssl server
+To make a simple server, we can use openssl s_server command which implements a generic SSL/TLS server which listens for connections on a given port using SSL/TLS. Please issue the following command to start a TLS server.
 
-> CA:TRUE means it is a intermediate CA and allow the CA to issue certificates. If the CA value not be assigned, the default value FALSE will be assigned.
+```
+openssl s_server -accept 20000 -cert server.cert -key server.key  -WWW -debug -tlsextdebug
+```
+The useful options in this command:
+- accept: the optional TCP host and port to listen on for connections. If not specified, *:4433 is used.
+- cert and key: the certificate and key of server are required, which have generated by gen.sh
+- WWW: Emulates a simple web server. It is very useful. The pages will be resolved relative to the current directory, for example if the URL https://localhost:20000/index.html is requested the file ./index.html will be loaded. 
+- debug and tlsextdebug: to show the detailed dump information of all traffic.
 
-> pathlen:0 does still allow the CA to issue certificates, but these certificates must be end-entity-certificates.It also implies that with this certificate, the CA must not issue intermediate CA certificates .
+## Send request
+After server started successfully, we can use browser to send a request as following. 
 
-### Leaf cert request
-Fourth to generate end-entity leaf's private key and certificate signing request (CSR)
 ```
-openssl req -newkey rsa:4096 -nodes -keyout leaf.key -out leaf.req -subj "/CN=localhost/emailAddress=leaf@gmail.com"
+https://localhost:20000/index.html
 ```
-### Leaf cert
-Fifty ot use intermediate's private key to sign leaf's CSR and get back the signed certificate of leaf
-```
-openssl x509 -req -in leaf.req -days 60 -CA intermediate.cert -CAkey intermediate.key -CAcreateserial -out leaf.cert -extfile leaf.ext
-```
-> Notice basicConstraints atrribute in leaf.ext have been assigned defaultly **(FALSE)**. 
+**But security risk warning occur.** Because its certificate issuer is unknow and the server certificate created by ourself is not trusted by browser.
+![firefox-security-warning](/docs/assets/Security/firefox-security-warning.png)
 
-``` name=leaf.ext
-subjectAltName=DNS:*.pcbook.com,DNS:*.pcbook.org,IP:0.0.0.0
-```
+There are two ways to open the index
+- Click **Advanced...** buttom and **Accept the Risk and Continue**
+- Add the CA certificate which sign the server certificate in the certificate manager of browser.
 
-### verify the trust chain
-To verify the leaf certificate aginst by intermediate CA
-1. intermediate's certificate verification against root certificate"
-```
-openssl verify -show_chain -CAfile root.cert intermediate.cert leaf.cert
-```
-2. Partial chain verifiication: to verify leaf's certificate against intermediate certificate
-```
-openssl verify -show_chain -partial_chain -trusted intermediate.cert leaf.cert
-```
-3. Full chain verifiication: to verify leaf's certificate against intermediate and root certificate
-```
-openssl verify -show_chain -CAfile root.cert -untrusted intermediate.cert leaf.cert
-```
+> After CA ceritificate added in the manager, the browser will trust all the server's certificate which signed by the CA's.
+
+## Add server cert in the manager
+You can found the certificate manager is located at **about:preferences#privacy** in the firefox. And import the CA's cert to the manager.
+![firefox-security-warning](/docs/assets/Security/firefox-certificate-manager.png)
+
+## index.html loaded
+There is **Hello World** in the webpage.
+
+## souce code
+The detailed [source code](https://github.com/vulnsystem/OpensslCertificateVerify/browser-authority) have been push to github. Please star it when helpful. 
