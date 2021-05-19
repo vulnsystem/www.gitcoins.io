@@ -59,8 +59,8 @@ openssl verify -show_chain -CAfile ca.cert client.cert
 ```
 
 ### Source Code
-[The detaile code have been put into the github](https://github.com/vulnsystem/OpensslCertificateVerify/blob/main/secp256k1/). 
-[gen.sh](https://github.com/vulnsystem/OpensslCertificateVerify/blob/main/secp256k1/gen.sh) collect all the shell command, you can issue ./gen.sh to run all at a time.
+[The detaile code have been put into the github](https://github.com/vulnsystem/OpenssLabs/blob/main/secp256k1/). 
+[gen.sh](https://github.com/vulnsystem/OpenssLabs/blob/main/secp256k1/gen.sh) collect all the shell command, you can issue ./gen.sh to run all at a time.
 
 ## Generate and verify secp256r1 certificate
 
@@ -128,3 +128,6 @@ openssl verify -show_chain -partial_chain -trusted intermediate.cert leaf.cert
 ```
 openssl verify -show_chain -CAfile root.cert -untrusted intermediate.cert leaf.cert
 ```
+### Source Code
+[The detaile code have been put into the github](https://github.com/vulnsystem/OpenssLabs/blob/main/chain-trust/). 
+[gen.sh](https://github.com/vulnsystem/OpenssLabs/blob/main/chain-trust/gen.sh) collect all the shell command, you can issue ./gen.sh to run all at a time.
