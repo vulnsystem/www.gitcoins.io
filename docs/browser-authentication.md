@@ -1,6 +1,6 @@
 ---
-id: browser-authority
-title: Browser Authority
+id: browser-authentication
+title: Browser authentication
 description: 'How browser authority works'
 ---
 
@@ -11,7 +11,7 @@ This lab to show you how authority of web browser works.
 
 ## Generate server certificate
 
-We will create the CA and server certificate which key type is rsa:4096. The detailed [source code](https://github.com/vulnsystem/OpensslCertificateVerify/browser-authority) have been push to github. Please star it when helpful. The CA and server certificates will generate after you run the **gen.sh**.
+We will create the CA and server certificate which key type is rsa:4096. The detailed [source code](https://github.com/vulnsystem/OpensslCertificateVerify/browser-authentication) have been push to github. Please star it when helpful. The CA and server certificates will generate after you run the **gen.sh**.
 
 ```
 # 1. Generate server CA's private key and self-signed certificate
@@ -72,4 +72,4 @@ You can found the certificate manager is located at **about:preferences#privacy*
 There is **Hello World** in the webpage.
 
 ## souce code
-The detailed [source code](https://github.com/vulnsystem/OpenssLabs/blob/main/browser-authority) have been push to github. Please star it when helpful. 
+The detailed [source code](https://github.com/vulnsystem/OpenssLabs/blob/main/browser-authentication) have been push to github. Please star it when helpful. 
