@@ -13,7 +13,8 @@
       "create-certificates",
       "openssl-labs",
       "browser-authentication",
-      "mutual-authentication"
+      "mutual-authentication",
+      "grpc-auth-labs"
     ],
     "The Basics": [
       "getting-started",

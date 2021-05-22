@@ -1,6 +1,6 @@
 ---
 id: browser-authentication
-title: Browser authentication
+title: Browser Authentication
 description: 'How browser authentication works'
 ---
 
