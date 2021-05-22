@@ -12,7 +12,8 @@
       "tls-handshake",
       "create-certificates",
       "openssl-labs",
-      "browser-authority"
+      "browser-authentication",
+      "mutual-authentication"
     ],
     "The Basics": [
       "getting-started",

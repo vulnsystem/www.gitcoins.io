@@ -1,7 +1,7 @@
 ---
 id: browser-authentication
 title: Browser authentication
-description: 'How browser authority works'
+description: 'How browser authentication works'
 ---
 
 ![openssl](/docs/assets/Security/openssl.png)
