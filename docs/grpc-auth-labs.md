@@ -4,6 +4,8 @@ title: grpc Auth Labs
 description: 'How to set up grpc authentication server'
 ---
 
+import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
+
 > Copyright: the following content is adapt from the [TECHSCHOOL](https://dev.to/techschoolguru/how-to-secure-grpc-connection-with-ssl-tls-in-go-4ph).
 
 In the previous lecture, we have learned how [mutual authentication works](mutual-authentication).
@@ -41,7 +43,7 @@ First we write the [gen.sh](https://github.com/vulnsystem/OpenssLabs/blob/main/g
 
 ```shell
 # 1. Generate server CA's private key and self-signed certificate
-openssl req -x509 -newkey rsa:4096 -days 365 -nodes -keyout ca.key -out ca.cert -subj "/CN=localhost/emailAddress=ca@gmail.com" 
+openssl req -x509 -newkey rsa:4096 -days 365 -nodes -keyout ca.key -out ca.cert -subj "/CN=localhost/emailAddress=ca@gmail.com"
 
 echo "CA's self-signed certificate"
 openssl x509 -in ca.cert -noout -text
@@ -63,6 +65,7 @@ openssl verify -show_chain -CAfile ca.cert server.cert
 I encourage you to read my post about [how to create and sign TLS certificate](create-certificates) to understand how this script works.
 
 Basically this script contains 3 parts:
+
 - First, generate CA’s private key and its self-signed certificate.
 - Second, create web server’s private key and CSR.
 - And third, use CA’s private key to sign the web server’s CSR and get back its certificate.
@@ -75,11 +78,12 @@ The generated files that we care about in this lab are:
 - And the server’s private key.
 
 ## Implement server-side TLS
+
 Next step, I will show you how to secure our gRPC connection with server-side TLS.
 
-Let’s open [greeter_server.js](https://github.com/vulnsystem/OpenssLabs/blob/main/grpc-server-auth/greeter_server.js) file. I will add ca and server certificates and sever private key to create TLS credentials. 
+Let’s open [greeter_server.js](https://github.com/vulnsystem/OpenssLabs/blob/main/grpc-server-auth/greeter_server.js) file. I will add ca and server certificates and sever private key to create TLS credentials.
 
-<Tabs groupId="package-manager" defaultValue={constants.defaultPackageManager} values={constants.packageManagers}>
+<Tabs groupId="one-way-server" defaultValue="insecure" values={[ {label: 'Insecure', value: 'insecure'}, {label: 'server-auth', value: 'server-auth'} ]}>
 <TabItem value="insecure">
 
 ```
@@ -93,7 +97,7 @@ function main() {
 ```
 
 </TabItem>
-<TabItem value="server auth">
+<TabItem value="server-auth">
 
 ```
 function main() {
@@ -101,7 +105,7 @@ function main() {
 
   server.addService(hello_proto.Greeter.service, {sayHello: sayHello});
   server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createSsl(
-    fs.readFileSync('./credentials/ca.cert'), 
+    fs.readFileSync('./credentials/ca.cert'),
     [{
         cert_chain: fs.readFileSync('./credentials/server.cert'),
         private_key: fs.readFileSync('./credentials/server.key')
@@ -112,25 +116,29 @@ function main() {
   });
 }
 ```
+
 </TabItem>
 </Tabs>
 
 Now we can start the server:
+
 ```shell
 npm install
 node greeter_server.js
 ```
 
 ## Start client connection
+
 After the server started, the client will try to connect with insecure function. But it failed because we haven’t enabled TLS on the client side yet. So let’s do that!
 
-Similar to what we did on the server, I also add a function to load TLS credentials from files. But this time, we only need to load the certificate of the CA who signed the server’s certificate. 
+Similar to what we did on the server, I also add a function to load TLS credentials from files. But this time, we only need to load the certificate of the CA who signed the server’s certificate.
 
-The reason is, client needs to make sure that it’s the right server it wants to talk to. So server's cert will be verified against the CA's cert and the CA should be trusted by client. 
+The reason is, client needs to make sure that it’s the right server it wants to talk to. So server's cert will be verified against the CA's cert and the CA should be trusted by client.
 
-Let’s open [greeter_client.js](https://github.com/vulnsystem/OpenssLabs/blob/main/grpc-server-auth/greeter_client.js) file and add the trusted ca certificates to client. 
+Let’s open [greeter_client.js](https://github.com/vulnsystem/OpenssLabs/blob/main/grpc-server-auth/greeter_client.js) file and add the trusted ca certificates to client.
 
-<Tabs groupId="package-manager" defaultValue={constants.defaultPackageManager} values={constants.packageManagers}>
+<Tabs groupId="one-way-client" defaultValue="insecure" values={[ {label: 'Insecure', value: 'insecure'}, {label: 'server-auth', value: 'server-auth'} ]}>
+
 <TabItem value="insecure">
 
 ```
@@ -139,7 +147,7 @@ var client = new hello_proto.Greeter(target,
 ```
 
 </TabItem>
-<TabItem value="server auth">
+<TabItem value="server-auth">
 
 ```
 var client = new hello_proto.Greeter(target,
@@ -152,25 +160,28 @@ var client = new hello_proto.Greeter(target,
 So here we load the ca.cert file. Note that we only need to set the RootCAs field, which contains the trusted CA’s certificate.
 
 And we’re done. Let’s try it out!
+
 ```shell
 node greeter_client.js
 ```
+
 This time the requests are successfully sent to the server. Perfect!
+
 <center><img src="/docs/assets/GettingStartedCongratulations.png" width="150"></img></center>
 
 ## Subject Alternative Name (SAN)
 
 There’s 1 thing I want to show you here. Remember that when we develop on localhost, It’s important to add the IP:0.0.0.0 as an Subject Alternative Name (SAN) extension to the certificate.
 
-<Tabs groupId="package-manager" defaultValue={constants.defaultPackageManager} values={constants.packageManagers}>
-<TabItem value="with IP">
+<Tabs groupId="san" defaultValue="wIP" values={[ {label: 'With IP', value: 'wIP'}, {label: 'Without IP', value: 'wzIP'} ]}>
+<TabItem value="xIP">
 
 ```
 subjectAltName=DNS:*.pcbook.com,DNS:*.pcbook.org,IP:0.0.0.0
 ```
 
 </TabItem>
-<TabItem value="without IP">
+<TabItem value="wzIP">
 
 ```
 subjectAltName=DNS:*.pcbook.com,DNS:*.pcbook.org
@@ -178,7 +189,6 @@ subjectAltName=DNS:*.pcbook.com,DNS:*.pcbook.org
 
 </TabItem>
 </Tabs>
-
 
 Let’s see what will happen if we remove this from the server.ext config file.
 
@@ -217,8 +227,8 @@ Let’s say for this tutorial, we use the same CA to sign both server and client
 
 After the client’s certificate and private key are ready. To enable mutual TLS, on the server side [greeter_server.js](https://github.com/vulnsystem/OpenssLabs/blob/main/grpc-client-auth/greeter_server.js), we should change the ClientAuth field from False to True.
 
-<Tabs groupId="package-manager" defaultValue={constants.defaultPackageManager} values={constants.packageManagers}>
-<TabItem value="mutual auth">
+<Tabs groupId="two-way-auth" defaultValue="mutual-auth" values={[ {label: 'mutual-auth', value: 'mutual-auth'}, {label: 'server-auth', value: 'server-auth'} ]}>
+<TabItem value="mutual-auth">
 
 ```
 function main() {
@@ -226,7 +236,7 @@ function main() {
 
   server.addService(hello_proto.Greeter.service, {sayHello: sayHello});
   server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createSsl(
-    fs.readFileSync('./credentials/ca.cert'), 
+    fs.readFileSync('./credentials/ca.cert'),
     [{
         cert_chain: fs.readFileSync('./credentials/server.cert'),
         private_key: fs.readFileSync('./credentials/server.key')
@@ -239,7 +249,7 @@ function main() {
 ```
 
 </TabItem>
-<TabItem value="server auth">
+<TabItem value="server-auth">
 
 ```
 function main() {
@@ -247,7 +257,7 @@ function main() {
 
   server.addService(hello_proto.Greeter.service, {sayHello: sayHello});
   server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createSsl(
-    fs.readFileSync('./credentials/ca.cert'), 
+    fs.readFileSync('./credentials/ca.cert'),
     [{
         cert_chain: fs.readFileSync('./credentials/server.cert'),
         private_key: fs.readFileSync('./credentials/server.key')
@@ -258,6 +268,7 @@ function main() {
   });
 }
 ```
+
 </TabItem>
 </Tabs>
 
@@ -267,8 +278,8 @@ Now if we connect the current client to this new server, it will fail because th
 
 Let’s go to the client code [greeter_client.js](https://github.com/vulnsystem/OpenssLabs/blob/main/grpc-client-auth/greeter_client.js) to fix this. I will just copy the code to load certificate on the server side and change the file names to client.cert and client.key.Then we have to add the client certificate to the TLS config by setting the Certificates field, just like what we did on the server side.
 
-<Tabs groupId="package-manager" defaultValue={constants.defaultPackageManager} values={constants.packageManagers}>
-<TabItem value="mutual auth">
+<Tabs groupId="two-way-client" defaultValue="mutual-auth" values={[ {label: 'mutual-auth', value: 'mutual-auth'}, {label: 'server-auth', value: 'server-auth'} ]}>
+<TabItem value="mutual-auth">
 
 ```
 var client = new hello_proto.Greeter(target,
@@ -278,25 +289,28 @@ var client = new hello_proto.Greeter(target,
 ```
 
 </TabItem>
-<TabItem value="server auth">
+<TabItem value="server-auth">
 
 ```
 var client = new hello_proto.Greeter(target,
                 grpc.credentials.createSsl(fs.readFileSync('./credentials/ca.cert')));
 ```
+
 </TabItem>
 </Tabs>
 
 OK, now if we re-run the client, all the requests will be successful.
+
 <center><img src="/docs/assets/GettingStartedCongratulations.png" width="150"></img></center>
 
-## Private key encryption
+## Private key passphrase
 
 One last thing before we finish. As you know, the current client’s and server’s private key that we are using are not encrypted. It’s because we use the -nodes option when generating them (in the cert/gen.sh file).
 
 ```shell
 openssl req -newkey rsa:4096 -nodes -keyout server-key.pem -out server-req.pem -subj "/C=FR/ST=Ile de France/L=Paris/O=PC Book/OU=Computer/CN=*.pcbook.com/emailAddress=pcbook@gmail.com"
 ```
+
 If we remove this -nodes option and run make cert, we will be asked to provide a passphrase to encrypt the server’s private key: **passphrase**.
 
 And the generated private key of the server is now encrypted. If we try to start the server with this key, it will return an **error**: cannot load TLS credentials. That’s because the key is encrypted.
@@ -306,4 +320,3 @@ We can add more codes to decrypt the key with the passphrase, but I think in the
 For example, if you use amazon web service, you can store your private key or any other secrets in encrypted format with aws secret manager. Or you can use HashiCorp’s Vault for the same purpose.
 
 And that’s everything I wanted to share with you in this article. I hope you find it useful. Thanks a lot for reading, and see you guys in the next one!
-
