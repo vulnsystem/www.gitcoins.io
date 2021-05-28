@@ -141,7 +141,7 @@ module.exports = {
     navbar: {
       title: 'Gitcoins',
       logo: {
-        src: 'docs/assets/Blockchain/blockchain-logo.jpg',
+        src: 'img/header_logo.svg',
         alt: 'React Native',
       },
       style: 'dark',
