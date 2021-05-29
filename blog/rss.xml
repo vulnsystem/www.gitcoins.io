@@ -365,5 +365,12 @@
             <pubDate>Thu, 26 Mar 2015 00:00:00 GMT</pubDate>
             <description><![CDATA[We introduced React to the world two years ago, and since then it's seen impressive growth, both inside and outside of Facebook. Today, even though no one is forced to use it, new web projects at Facebook are commonly built using React in one form or another, and it's being broadly adopted across the industry. Engineers are choosing to use React every day because it enables them to spend more time focusing on their products and less time fighting with their framework. It wasn't until we'd been building with React for a while, though, that we started to understand what makes it so powerful.]]></description>
         </item>
+        <item>
+            <title><![CDATA[Notice on preventing bitcoin risk]]></title>
+            <link>https://www.gitcoins.io/blog/2013/12/03/notice-preventing-bitcoin-risk</link>
+            <guid>Notice on preventing bitcoin risk</guid>
+            <pubDate>Tue, 03 Dec 2013 00:00:00 GMT</pubDate>
+            <description><![CDATA[关于防范比特币风险的通知]]></description>
+        </item>
     </channel>
 </rss>
