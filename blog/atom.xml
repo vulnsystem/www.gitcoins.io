@@ -114,6 +114,13 @@
         <summary type="html"><![CDATA[We announced our React Native Open Source roadmap in Q4 2018 after deciding to invest more in the React Native open source community.]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[blockchain service requirement in China]]></title>
+        <id>blockchain service requirement in China</id>
+        <link href="https://www.gitcoins.io/blog/2019/01/10/blockchain-service-requirement"/>
+        <updated>2019-01-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[《区块链信息服务管理规定》]]></summary>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[The State of the React Native Community in 2018]]></title>
         <id>The State of the React Native Community in 2018</id>
         <link href="https://www.gitcoins.io/blog/2019/01/07/state-of-react-native-community"/>
@@ -133,6 +140,13 @@
         <link href="https://www.gitcoins.io/blog/2018/08/27/wkwebview"/>
         <updated>2018-08-27T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[For a long time now, Apple has discouraged using UIWebViews in favor of WKWebView. In iOS 12, which will be released in the upcoming months, UIWebViews will be formally deprecated. React Native's iOS WebView implementation relies heavily on the UIWebView class. Therefore, in light of these developments, we've built a new native iOS backend to the WebView React Native component that uses WKWebView.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[preventing illegal fund with blockchain]]></title>
+        <id>preventing illegal fund with blockchain</id>
+        <link href="https://www.gitcoins.io/blog/2018/08/24/preventing-illegal-fund-blockchain"/>
+        <updated>2018-08-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[《关于防范以“虚拟货币”“区块链”名义进行非法集资的风险提示》]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Accessibility API Updates]]></title>
@@ -184,11 +198,25 @@
         <summary type="html"><![CDATA[AWS is well known in the technology industry as a provider of cloud services. These include compute, storage, and database technologies, as well as fully managed serverless offerings. The AWS Mobile team has been working closely with customers and members of the JavaScript ecosystem to make cloud-connected mobile and web applications more secure, scalable, and easier to develop and deploy. We began with a complete starter kit, but have a few more recent developments.]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[risk of foreign ico activities]]></title>
+        <id>risk of foreign ico activities</id>
+        <link href="https://www.gitcoins.io/blog/2018/01/26/risk-of-foreign-ico-activities"/>
+        <updated>2018-01-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[《关于防范境外ICO与“虚拟货币”交易风险的提示》]]></summary>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Implementing Twitter’s App Loading Animation in React Native]]></title>
         <id>Implementing Twitter’s App Loading Animation in React Native</id>
         <link href="https://www.gitcoins.io/blog/2018/01/18/implementing-twitters-app-loading-animation-in-react-native"/>
         <updated>2018-01-18T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Twitter’s iOS app has a loading animation I quite enjoy.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[risk of disguised ico activities]]></title>
+        <id>risk of disguised ico activities</id>
+        <link href="https://www.gitcoins.io/blog/2018/01/12/risk-of-disguised-ico-activities"/>
+        <updated>2018-01-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[《防范变相ICO活动风险提示》]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[React Native Monthly #6]]></title>
