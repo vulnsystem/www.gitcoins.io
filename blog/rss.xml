@@ -4,10 +4,17 @@
         <title>Gitcoins Blog</title>
         <link>https://www.gitcoins.io/blog</link>
         <description>Gitcoins Blog</description>
-        <lastBuildDate>Thu, 08 Apr 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 18 May 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <copyright>Copyright © 2021 Facebook, Inc.</copyright>
+        <item>
+            <title><![CDATA[risk of virtual currency transaction]]></title>
+            <link>https://www.gitcoins.io/blog/2021/05/18/risk-of-virtual-currency-transaction</link>
+            <guid>risk of virtual currency transaction</guid>
+            <pubDate>Tue, 18 May 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[《关于防范虚拟货币交易炒作风险的联合公告》]]></description>
+        </item>
         <item>
             <title><![CDATA[The GAAD Pledge - March Accessibility Issues Update]]></title>
             <link>https://www.gitcoins.io/blog/2021/04/08/GAAD-March-Accessibility-Issue-Update</link>

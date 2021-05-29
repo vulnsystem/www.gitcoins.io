@@ -2,12 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.gitcoins.io/blog</id>
     <title>Gitcoins Blog</title>
-    <updated>2021-04-08T00:00:00.000Z</updated>
+    <updated>2021-05-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://www.gitcoins.io/blog"/>
     <subtitle>Gitcoins Blog</subtitle>
     <icon>https://www.gitcoins.io/img/favicon.ico</icon>
     <rights>Copyright © 2021 Facebook, Inc.</rights>
+    <entry>
+        <title type="html"><![CDATA[risk of virtual currency transaction]]></title>
+        <id>risk of virtual currency transaction</id>
+        <link href="https://www.gitcoins.io/blog/2021/05/18/risk-of-virtual-currency-transaction"/>
+        <updated>2021-05-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[《关于防范虚拟货币交易炒作风险的联合公告》]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[The GAAD Pledge - March Accessibility Issues Update]]></title>
         <id>The GAAD Pledge - March Accessibility Issues Update</id>
