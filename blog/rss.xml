@@ -212,6 +212,13 @@
             <description><![CDATA[The React Native monthly meeting continues! Here are the notes from each team:]]></description>
         </item>
         <item>
+            <title><![CDATA[preventing the financing risk of token issuance]]></title>
+            <link>https://www.gitcoins.io/blog/2017/09/04/preventing-token-risk</link>
+            <guid>preventing the financing risk of token issuance</guid>
+            <pubDate>Mon, 04 Sep 2017 00:00:00 GMT</pubDate>
+            <description><![CDATA[《关于防范代币发行融资风险的公告》]]></description>
+        </item>
+        <item>
             <title><![CDATA[React Native Monthly #3]]></title>
             <link>https://www.gitcoins.io/blog/2017/08/30/react-native-monthly-3</link>
             <guid>React Native Monthly #3</guid>
@@ -366,11 +373,18 @@
             <description><![CDATA[We introduced React to the world two years ago, and since then it's seen impressive growth, both inside and outside of Facebook. Today, even though no one is forced to use it, new web projects at Facebook are commonly built using React in one form or another, and it's being broadly adopted across the industry. Engineers are choosing to use React every day because it enables them to spend more time focusing on their products and less time fighting with their framework. It wasn't until we'd been building with React for a while, though, that we started to understand what makes it so powerful.]]></description>
         </item>
         <item>
+            <title><![CDATA[Strengthening the prevention of bitcoin risk]]></title>
+            <link>https://www.gitcoins.io/blog/2014/06/26/strengthening-preventing-bitcoin-risk</link>
+            <guid>Strengthening the prevention of bitcoin risk</guid>
+            <pubDate>Thu, 26 Jun 2014 00:00:00 GMT</pubDate>
+            <description><![CDATA[《关于进一步加强防范比特币风险的通知》]]></description>
+        </item>
+        <item>
             <title><![CDATA[Notice on preventing bitcoin risk]]></title>
             <link>https://www.gitcoins.io/blog/2013/12/03/notice-preventing-bitcoin-risk</link>
             <guid>Notice on preventing bitcoin risk</guid>
             <pubDate>Tue, 03 Dec 2013 00:00:00 GMT</pubDate>
-            <description><![CDATA[关于防范比特币风险的通知]]></description>
+            <description><![CDATA[《关于防范比特币风险的通知》]]></description>
         </item>
     </channel>
 </rss>
