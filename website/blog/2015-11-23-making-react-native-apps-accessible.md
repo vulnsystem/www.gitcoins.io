@@ -27,3 +27,9 @@ Let's walk through a slightly more involved application of the React AX API by l
 </footer>
 
 > This is an excerpt. Read the rest of the post on [Facebook Code](https://code.facebook.com/posts/435862739941212/making-react-native-apps-accessible/).
+
+央行于3月中旬向央行各分支机构下发了一份名为《关于进一步加强比特币风险防范工作的通知》（下简称《通知》），该文件要求各银行和第三方支付机构，关闭十多家境内的比特币平台的所有交易账户。这意味着金融机构为比特币网站平台的交易账户开户为不合法，除非现金交易，比特币的投资者无法在中国境内为交易进行银行转帐、第三方支付，力度空前。
+
+```
+央行于3月中旬向央行各分支机构下发了一份名为《关于进一步加强比特币风险防范工作的通知》（下简称《通知》），该文件要求各银行和第三方支付机构，关闭十多家境内的比特币平台的所有交易账户。这意味着金融机构为比特币网站平台的交易账户开户为不合法，除非现金交易，比特币的投资者无法在中国境内为交易进行银行转帐、第三方支付，力度空前。
+```
