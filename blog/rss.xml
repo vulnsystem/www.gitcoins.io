@@ -4,10 +4,17 @@
         <title>Gitcoins Blog</title>
         <link>https://www.gitcoins.io/blog</link>
         <description>Gitcoins Blog</description>
-        <lastBuildDate>Tue, 18 May 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 30 May 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <copyright>Copyright © 2021 Facebook, Inc.</copyright>
+        <item>
+            <title><![CDATA[Bitcoin policy timeline in China]]></title>
+            <link>https://www.gitcoins.io/blog/2021/05/30/timeline-bitcion-policy-china</link>
+            <guid>Bitcoin policy timeline in China</guid>
+            <pubDate>Sun, 30 May 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[1997-06: ECMAScript 1]]></description>
+        </item>
         <item>
             <title><![CDATA[risk of virtual currency transaction]]></title>
             <link>https://www.gitcoins.io/blog/2021/05/18/risk-of-virtual-currency-transaction</link>
