@@ -143,9 +143,7 @@ openssl s_client -showcerts -connect localhost:20000  -CAfile ca.cert  -cert cli
 ```
 
 :::caution
-The parameter **-curves secp256k1 -tls1_2** is very import in this lab.
-The **secp256k1** is not default elliptic curve supported by Openssl TLS1_3, So the curves and TLS version must be assigned.
-As you know the **secp256r1** is default elliptic curve supported by Openssl, So the shell command for server and client are same as rsa's.
+The parameter -curves secp256k1 -tls1_2 is very import in this lab. The secp256k1 is not default elliptic curve supported by Openssl TLS1_3, So the curves and TLS version must be assigned. As you know the secp256r1 is default elliptic curve supported by Openssl, So the shell command for server and client are same as rsa's.
 :::
 
 ### The output of handshake
@@ -173,3 +171,14 @@ Please input any string in the server console, then the string will send to the 
 ### Source Code
 [The detaile code have been put into the github](https://github.com/vulnsystem/OpenssLabs/tree/main/secp256k1). 
 [gen.sh](https://github.com/vulnsystem/OpenssLabs/tree/main/secp256k1/gen.sh) collect all the shell command, you can issue ./gen.sh to run all at a time.
+
+## secp256r1 openssl server
+
+:::note secp256r1
+As you know the **secp256r1** is default elliptic curve supported by Openssl TLS 1_3, So the shell command for server and client are same as rsa's.
+The parameter **-curves secp256k1 -tls1_2** is not needed.
+:::
+
+### Source Code
+[The detaile code have been put into the github](https://github.com/vulnsystem/OpenssLabs/tree/main/secp256r1). 
+[gen.sh](https://github.com/vulnsystem/OpenssLabs/tree/main/secp256r1/gen.sh) collect all the shell command, you can issue ./gen.sh to run all at a time.

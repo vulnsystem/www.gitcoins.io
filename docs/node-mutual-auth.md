@@ -119,8 +119,7 @@ conn.on('error', function(error) {
 ```
 
 :::caution
-The parameter **ecdhCurve and maxVersion** is very import in this lab.
-The **secp256k1** is not default elliptic curve supported by Openssl TLS1_3, So the curves and TLS version must be assigned.
+The parameter **ecdhCurve and maxVersion** is very import in this lab. The **secp256k1** is not default elliptic curve supported by Openssl TLS1_3, So the curves and TLS version must be assigned. 
 :::
 
 ### Try it out

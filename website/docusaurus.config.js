@@ -5,7 +5,7 @@ module.exports = {
   title: 'Gitcoins',
   tagline: 'A framework for building native apps using React',
   organizationName: 'vulnsystem',
-  projectName: 'www.vulnsystem.com',
+  projectName: 'www.gitcoins.io',
   url: 'https://www.gitcoins.io',
   baseUrl: '/',
   clientModules: [require.resolve('./snackPlayerInitializer.js')],
@@ -38,6 +38,7 @@ module.exports = {
           editUrl:
             'https://github.com/vulnsystem/www.gitcoins.io/blob/documentation/website/',
           path: '../docs',
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.json'),
           remarkPlugins: [require('@react-native-website/remark-snackplayer')],
           editCurrentVersion: true,
