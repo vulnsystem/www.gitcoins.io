@@ -38,7 +38,6 @@ module.exports = {
           editUrl:
             'https://github.com/vulnsystem/www.gitcoins.io/blob/documentation/website/',
           path: '../docs',
-          routeBasePath: '../docs',
           sidebarPath: require.resolve('./sidebars.json'),
           remarkPlugins: [require('@react-native-website/remark-snackplayer')],
           editCurrentVersion: true,
