@@ -1,6 +1,6 @@
 ---
 id: grpc-auth-labs
-title: grpc Auth Labs
+title: gRPC Auth Labs
 description: 'How to set up grpc authentication server'
 ---
 

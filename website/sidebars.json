@@ -12,6 +12,7 @@
       "tls-handshake",
       "create-certificates",
       "openssl-labs",
+      "openssl-server",
       "browser-authentication",
       "mutual-authentication",
       "grpc-auth-labs"
