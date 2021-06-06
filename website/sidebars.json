@@ -15,7 +15,8 @@
       "openssl-server",
       "browser-authentication",
       "mutual-authentication",
-      "grpc-auth-labs"
+      "grpc-auth-labs",
+      "node-mutual-auth"
     ],
     "The Basics": [
       "getting-started",
